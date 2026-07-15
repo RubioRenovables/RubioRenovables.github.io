@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rubio Renovables — Contratos firmados para instaladoras</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --navy:      #0F2438;
+  --navy2:     #1B3A54;
+  --navy3:     #24405C;
+  --ink:       #16212B;
+  --paper:     #F6F8FA;
+  --paper2:    #EBEFF3;
+  --steel:     #3E6E96;
+  --steel-d:   #2C5477;
+  --sky:       #6FA8D4;
+  --amber:     #D9A441;
+  --slate:     #5B6B7C;
+  --line:      #DCE3EA;
+  --line-dark: rgba(246,248,250,0.14);
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  font-family:'IBM Plex Sans', sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height:1.6;
+  font-size:16px;
+  overflow-x:hidden;
+}
+h1,h2,h3{ font-family:'Newsreader', serif; font-weight:600; letter-spacing:-0.005em; line-height:1.12; }
+a{ color:inherit; }
+.wrap{ max-width:1120px; margin:0 auto; padding:0 28px; }
+.eyebrow{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--steel); font-weight:500; display:flex; align-items:center; gap:9px; }
+.eyebrow::before{ content:''; width:16px; height:1.5px; background:var(--steel); display:inline-block; }
+.on-dark .eyebrow{ color:var(--sky); }
+.on-dark .eyebrow::before{ background:var(--sky); }
+
+/* reveal on scroll */
+.reveal{ opacity:0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1); }
+.reveal.in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+/* NAV */
+nav{ position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-bottom:1px solid var(--line); }
+nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:68px; }
+.brand{ font-family:'Newsreader'; font-weight:600; font-size:19px; color:var(--navy); display:flex; align-items:center; gap:10px; }
+.brand .mark{ width:24px; height:24px; border-radius:6px; background:var(--navy); display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono'; font-size:11px; color:#fff; }
+nav .links{ display:flex; gap:32px; font-family:'IBM Plex Mono'; font-size:12px; letter-spacing:0.03em; }
+nav .links a{ color:var(--slate); text-decoration:none; transition:color .15s; }
+nav .links a:hover{ color:var(--navy); }
+nav .cta{ font-family:'IBM Plex Mono'; font-size:12px; background:var(--navy); color:#fff; padding:10px 18px; border-radius:7px; text-decoration:none; letter-spacing:0.02em; transition:transform .15s, background .15s; display:inline-block; }
+nav .cta:hover{ background:var(--steel-d); transform:translateY(-1px); }
+
+/* HERO */
+.hero{ background:var(--navy); color:#EEF2F6; position:relative; overflow:hidden; padding:76px 0 0; }
+.hero .grid-bg{ position:absolute; inset:0; opacity:0.5; background-image: linear-gradient(rgba(246,248,250,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(246,248,250,0.05) 1px, transparent 1px); background-size: 44px 44px; mask-image: radial-gradient(ellipse 900px 600px at 30% 20%, black, transparent 75%); }
+.orb{ position:absolute; border-radius:50%; filter: blur(70px); opacity:0.35; pointer-events:none; animation: float 14s ease-in-out infinite; }
+.orb1{ width:420px; height:420px; background:var(--steel); top:-140px; right:-100px; animation-delay:0s; }
+.orb2{ width:320px; height:320px; background:var(--amber); bottom:-140px; right:280px; opacity:0.14; animation-delay:-6s; }
+@keyframes float{ 0%,100%{ transform:translate(0,0); } 50%{ transform:translate(-24px,28px); } }
+@media (prefers-reduced-motion: reduce){ .orb{ animation:none; } }
+
+.hero .inner{ position:relative; display:grid; grid-template-columns: 1.05fr 0.95fr; gap:40px; align-items:center; padding-bottom:0; }
+.hero h1{ font-size:clamp(33px, 4.4vw, 52px); margin-top:20px; color:#fff; }
+.hero h1 em{ font-style:italic; color:var(--sky); }
+.hero p.sub{ margin-top:22px; font-size:16.5px; color:#B7C6D4; max-width:520px; font-weight:400; }
+.hero .cta-row{ margin-top:32px; display:flex; gap:14px; flex-wrap:wrap; }
+.btn-primary{ background:#fff; color:var(--navy); font-family:'IBM Plex Mono'; font-size:13px; padding:15px 26px; border-radius:8px; text-decoration:none; letter-spacing:0.02em; display:inline-block; font-weight:500; transition:transform .15s, box-shadow .15s; }
+.btn-primary:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,0.25); }
+.btn-secondary{ border:1px solid rgba(238,242,246,0.35); color:#EEF2F6; font-family:'IBM Plex Mono'; font-size:13px; padding:15px 26px; border-radius:8px; text-decoration:none; letter-spacing:0.02em; display:inline-block; transition:border-color .15s, background .15s; }
+.btn-secondary:hover{ border-color:#fff; background:rgba(255,255,255,0.06); }
+
+/* HERO MOCKUP CARD */
+.mockup{ position:relative; }
+.mockup .browser{ background:#F9FAFB; border-radius:14px; box-shadow: 0 30px 70px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.06); overflow:hidden; transform: perspective(1200px) rotateY(-6deg) rotateX(2deg); animation: drift 8s ease-in-out infinite; }
+@keyframes drift{ 0%,100%{ transform: perspective(1200px) rotateY(-6deg) rotateX(2deg) translateY(0); } 50%{ transform: perspective(1200px) rotateY(-6deg) rotateX(2deg) translateY(-10px); } }
+@media (prefers-reduced-motion: reduce){ .mockup .browser{ animation:none; transform:none; } }
+.browser .bar{ background:#EDEFF2; padding:10px 14px; display:flex; gap:6px; align-items:center; }
+.browser .bar span{ width:9px; height:9px; border-radius:50%; background:#D3D7DC; }
+.browser .body{ padding:22px; }
+.browser .notif{ background:#fff; border:1px solid #E4E8EC; border-radius:10px; padding:16px; display:flex; gap:12px; align-items:flex-start; margin-bottom:12px; box-shadow:0 2px 6px rgba(15,36,56,0.04); }
+.browser .notif .ic{ width:34px; height:34px; border-radius:8px; background:#E9F3EC; color:#2F8557; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.browser .notif .tx .t1{ font-size:13px; font-weight:600; color:var(--ink); }
+.browser .notif .tx .t2{ font-size:11.5px; color:var(--slate); margin-top:3px; }
+.browser .notif.fade{ opacity:0.5; }
+.browser .stat-row{ display:flex; gap:10px; margin-top:16px; }
+.browser .stat{ flex:1; background:#F3F5F8; border-radius:10px; padding:14px; }
+.browser .stat .n{ font-family:'IBM Plex Mono'; font-size:19px; font-weight:500; color:var(--navy); }
+.browser .stat .l{ font-size:10.5px; color:var(--slate); margin-top:3px; }
+.float-badge{ position:absolute; background:#fff; border-radius:10px; padding:10px 14px; box-shadow:0 14px 30px rgba(0,0,0,0.25); display:flex; align-items:center; gap:8px; font-family:'IBM Plex Mono'; font-size:12px; color:var(--navy); font-weight:500; animation: bob 5s ease-in-out infinite; }
+.float-badge.b1{ top:-18px; left:-28px; animation-delay:-1s; }
+.float-badge.b2{ bottom:20px; right:-30px; animation-delay:-3s; }
+.float-badge .dot{ width:7px; height:7px; border-radius:50%; background:#2F8557; }
+@keyframes bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-8px); } }
+@media (prefers-reduced-motion: reduce){ .float-badge{ animation:none; } }
+
+.hero .stats{ margin-top:56px; display:flex; gap:0; border-top:1px solid var(--line-dark); position:relative; z-index:1; }
+.hero .stats .s{ flex:1; padding:22px 24px 26px 0; border-right:1px solid var(--line-dark); }
+.hero .stats .s:last-child{ border-right:none; }
+.hero .stats .s .n{ font-family:'Newsreader'; font-size:28px; color:#fff; font-weight:600; }
+.hero .stats .s .l{ font-size:12px; color:#8FA3B5; margin-top:5px; max-width:180px; }
+@media (max-width:900px){ .hero .inner{ grid-template-columns:1fr; } .mockup{ margin-top:20px; max-width:420px; } }
+@media (max-width:780px){ .hero .stats{ flex-direction:column; gap:16px; } .hero .stats .s{ border-right:none; padding-right:0; } }
+
+/* SECTION SHARED */
+section{ padding:100px 0; }
+.section-head{ max-width:620px; margin-bottom:52px; }
+.section-head h2{ font-size:clamp(27px,3.4vw,37px); margin-top:14px; color:var(--navy); }
+
+/* HOW IT WORKS */
+.flow{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:8px; }
+.flow .step{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:26px 22px; transition:transform .2s, box-shadow .2s, border-color .2s; }
+.flow .step:hover{ transform:translateY(-5px); box-shadow:0 16px 34px rgba(15,36,56,0.09); border-color:transparent; }
+.flow .step .ic{ width:42px; height:42px; border-radius:10px; background:var(--paper2); color:var(--steel); display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+.flow .step .idx{ font-family:'IBM Plex Mono'; font-size:11.5px; color:var(--steel); margin-bottom:8px; display:block; }
+.flow .step h3{ font-size:18px; color:var(--navy); font-weight:600; }
+.flow .step p{ font-size:13.5px; color:var(--slate); margin-top:8px; }
+@media (max-width:900px){ .flow{ grid-template-columns:1fr 1fr; } }
+@media (max-width:600px){ .flow{ grid-template-columns:1fr; } }
+
+/* VALUE CARDS */
+.cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:24px; }
+.card{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:30px 26px; transition:transform .2s, box-shadow .2s; }
+.card:hover{ transform:translateY(-5px); box-shadow:0 16px 34px rgba(15,36,56,0.09); }
+.card .ic{ width:44px; height:44px; border-radius:11px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+.card:nth-child(1) .ic{ background:#E9F1F8; color:var(--steel); }
+.card:nth-child(2) .ic{ background:#FBF1DF; color:#B07C1F; }
+.card:nth-child(3) .ic{ background:#E9F3EC; color:#2F8557; }
+.card h3{ font-size:19px; color:var(--navy); font-weight:600; }
+.card p{ font-size:14px; color:var(--slate); margin-top:10px; }
+@media (max-width:900px){ .cards{ grid-template-columns:1fr; } }
+
+/* MODEL / DARK BAND */
+.model{ background:var(--navy); color:#EEF2F6; position:relative; overflow:hidden; }
+.model .grid-bg2{ position:absolute; inset:0; opacity:0.4; background-image: linear-gradient(rgba(246,248,250,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(246,248,250,0.04) 1px, transparent 1px); background-size: 44px 44px; }
+.model .grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:start; position:relative; }
+.model h2{ color:#fff; }
+.model .points{ list-style:none; margin-top:22px; }
+.model .points li{ padding-left:0; margin-bottom:16px; font-size:15px; color:#C3D0DC; border-top:1px solid var(--line-dark); padding-top:16px; }
+.model .points li:first-child{ border-top:none; padding-top:0; }
+.model .panel{ background:var(--navy2); border:1px solid var(--line-dark); border-radius:14px; overflow:hidden; }
+.model .panel .row{ display:flex; justify-content:space-between; padding:16px 22px; border-bottom:1px solid var(--line-dark); font-size:14px; }
+.model .panel .row:last-child{ border-bottom:none; }
+.model .panel .row .k{ color:#B7C6D4; }
+.model .panel .row .v{ font-family:'IBM Plex Mono'; color:#fff; font-weight:500; }
+.model .panel .head{ font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#8FA3B5; padding:16px 22px; border-bottom:1px solid var(--line-dark); }
+@media (max-width:900px){ .model .grid{ grid-template-columns:1fr; } }
+
+/* QUIENES SOMOS */
+.about{ background:var(--paper2); }
+.about .inner-flex{ display:grid; grid-template-columns:auto 1fr; gap:40px; align-items:start; }
+.about .quote-mark{ font-family:'Newsreader'; font-size:90px; color:var(--steel); opacity:0.25; line-height:0.6; }
+.about .wrap-inner{ max-width:700px; }
+.about p{ font-size:16px; color:var(--slate); margin-top:20px; }
+.about p.lead{ font-size:20px; color:var(--ink); font-family:'Newsreader'; font-style:italic; }
+@media (max-width:700px){ .about .inner-flex{ grid-template-columns:1fr; } .about .quote-mark{ display:none; } }
+
+/* COVERAGE */
+.coverage{ display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap; background:#fff; border:1px solid var(--line); border-radius:16px; padding:40px 44px; margin-top:8px; transition:box-shadow .2s; }
+.coverage:hover{ box-shadow:0 16px 34px rgba(15,36,56,0.07); }
+.coverage .badge{ font-family:'IBM Plex Mono'; font-size:11px; border:1px solid var(--steel); color:var(--steel); padding:5px 10px; border-radius:5px; letter-spacing:0.05em; }
+.coverage h3{ font-size:23px; margin-top:14px; color:var(--navy); }
+.coverage p{ color:var(--slate); font-size:14px; margin-top:8px; max-width:420px; }
+
+/* CONTACT */
+.contact{ background:var(--navy); color:#EEF2F6; text-align:left; position:relative; overflow:hidden; }
+.contact .grid{ display:grid; grid-template-columns:1.2fr 0.8fr; gap:56px; align-items:end; position:relative; }
+.contact h2{ color:#fff; font-size:clamp(28px,4vw,38px); margin-top:14px; }
+.contact p{ color:#B7C6D4; margin-top:16px; font-size:16px; max-width:420px; }
+.contact-links a{ font-family:'IBM Plex Mono'; font-size:14px; display:block; margin-bottom:12px; transition:color .15s; }
+.contact-links .em{ color:#fff; text-decoration:none; border-bottom:1px solid rgba(238,242,246,0.3); padding-bottom:3px; }
+.contact-links .em:hover{ color:var(--sky); border-color:var(--sky); }
+.contact-links .ph{ color:var(--sky); text-decoration:none; }
+
+footer{ background:var(--navy); border-top:1px solid var(--line-dark); padding:26px 0; }
+footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+footer p{ font-family:'IBM Plex Mono'; font-size:11px; color:#5D7286; }
+
+@media (max-width: 780px){
+  nav .links{ display:none; }
+  .contact .grid{ grid-template-columns:1fr; }
+  .coverage{ flex-direction:column; align-items:flex-start; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand"><span class="mark">R</span>Rubio Renovables</div>
+    <div class="links">
+      <a href="#modelo">Cómo funciona</a>
+      <a href="#modelo-economico">Modelo económico</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <a class="cta" href="#contacto">Hablemos</a>
+  </div>
+</nav>
+
+<header class="hero on-dark">
+  <div class="grid-bg"></div>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="wrap">
+    <div class="inner">
+      <div>
+        <div class="eyebrow">Expertos en captación y cierre de contratos</div>
+        <h1>Contratos firmados.<br>Sin captación. <em>Sin riesgo.</em></h1>
+        <p class="sub">Somos especialistas en captación, cualificación y cierre de contratos de energía solar. Tu equipo se centra en instalar — nosotros nos encargamos de que lleguen clientes reales, listos para firmar.</p>
+        <div class="cta-row">
+          <a class="btn-primary" href="#contacto">Quiero recibir contratos</a>
+          <a class="btn-secondary" href="#modelo">Ver cómo funciona</a>
+        </div>
+      </div>
+
+      <div class="mockup">
+        <div class="float-badge b1"><span class="dot"></span>Contrato firmado</div>
+        <div class="browser">
+          <div class="bar"><span></span><span></span><span></span></div>
+          <div class="body">
+            <div class="notif">
+              <div class="ic">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              </div>
+              <div class="tx">
+                <div class="t1">Nuevo contrato · Sant Cugat</div>
+                <div class="t2">5,2 kWp · Firmado hace 3 min</div>
+              </div>
+            </div>
+            <div class="notif fade">
+              <div class="ic">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              </div>
+              <div class="tx">
+                <div class="t1">Nuevo contrato · Badalona</div>
+                <div class="t2">4,4 kWp · Firmado ayer</div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <div class="stat"><div class="n">12</div><div class="l">Contratos este mes</div></div>
+              <div class="stat"><div class="n">0 €</div><div class="l">Coste de captación</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="float-badge b2"><span class="dot" style="background:var(--steel);"></span>Día 14 → comisión</div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="s"><div class="n">15%</div><div class="l">Comisión, solo sobre proyecto ejecutable</div></div>
+      <div class="s"><div class="n">14 días</div><div class="l">Cobramos tras el plazo de desistimiento, nunca antes</div></div>
+      <div class="s"><div class="n">0 €</div><div class="l">Coste de captación fijo para tu equipo comercial</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="modelo">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Cómo funciona</div>
+      <h2>De la llamada al contrato en tu bandeja de entrada</h2>
+    </div>
+    <div class="flow">
+      <div class="step reveal">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <span class="idx">01</span>
+        <h3>Cualificamos</h3>
+        <p>Contactamos al cliente, revisamos su factura real y confirmamos que el proyecto tiene sentido económico.</p>
+      </div>
+      <div class="step reveal">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7h6M9 11h6M9 15h4M5 21h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2z"/></svg></div>
+        <span class="idx">02</span>
+        <h3>Calculamos</h3>
+        <p>Presupuesto con tu marca, basado en consumo real — no en amortizaciones genéricas de marketing.</p>
+      </div>
+      <div class="step reveal">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <span class="idx">03</span>
+        <h3>Firma el cliente</h3>
+        <p>El contrato se genera y firma online, directamente contigo. Nosotros no somos parte del contrato.</p>
+      </div>
+      <div class="step reveal">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <span class="idx">04</span>
+        <h3>Ejecutas y pagas</h3>
+        <p>Tú instalas. Nosotros cobramos comisión solo cuando pasan los 14 días de desistimiento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="model" id="modelo-economico">
+  <div class="grid-bg2"></div>
+  <div class="wrap">
+    <div class="grid">
+      <div class="reveal">
+        <div class="eyebrow">El modelo económico</div>
+        <h2 style="margin-top:14px; font-size:clamp(25px,3vw,33px);">Sencillo, transparente, sin sorpresas</h2>
+        <ul class="points">
+          <li>El contrato se firma directamente contigo, con tu papel y tus condiciones.</li>
+          <li>No cobramos nada si el cliente ejerce su derecho de desistimiento.</li>
+          <li>No cobramos nada por visitas o presupuestos que no se cierran.</li>
+          <li>Un único acuerdo marco cubre todos los proyectos que te enviemos.</li>
+        </ul>
+      </div>
+      <div class="panel reveal">
+        <div class="head">Condiciones</div>
+        <div class="row"><span class="k">Coste por lead no cualificado</span><span class="v">0 €</span></div>
+        <div class="row"><span class="k">Coste por presupuesto enviado</span><span class="v">0 €</span></div>
+        <div class="row"><span class="k">Comisión sobre contrato firmado</span><span class="v">15%</span></div>
+        <div class="row"><span class="k">Momento de pago</span><span class="v">Día 14</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="grid reveal">
+      <div>
+        <div class="eyebrow">Contacto</div>
+        <h2>¿Eres instaladora en Barcelona?</h2>
+        <p>Hablemos 15 minutos. Sin compromiso, sin letra pequeña.</p>
+      </div>
+      <div class="contact-links">
+        <a class="em" href="mailto:comercial@rubiorenovables.com">comercial@rubiorenovables.com</a>
+        <a class="ph" href="tel:+34652154096">+34 652 15 40 96</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Rubio Renovables · Agencia de captación y cierre de contratos</p>
+    <p>Barcelona, España</p>
+  </div>
+</footer>
+
+<script>
+const els = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold:0.12 });
+els.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
